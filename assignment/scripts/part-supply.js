@@ -67,8 +67,26 @@ for(supply of supplyChanges) {
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+//I hope the point of this is to show us why not to use while loops for arrays
+let index = 0;
+while (index < supplyChanges.length) {
+  if(supplyChanges[index] > 0) {
+    console.log(`Added ${supplyChanges[index]} parts.`);
+  }
+  else if (supplyChanges[index] === 0) {
+    console.log("No change.");
+  }
+  else {
+    console.log(`Removed ${Math.abs(supplyChanges[index])} parts.`);
+  }
+  index++;
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+let totalParts = 0;
+for(supply of supplyChanges) {
+  totalParts += supply;
+}
+console.log(totalParts);
